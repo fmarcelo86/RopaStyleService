@@ -8,18 +8,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.ibm.ropastyle.entity.TipoDocumento;
+import com.ibm.ropastyle.entity.Producto;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class TipoDocumentoRepositoryTest {
+public class ProductoRepositoryTest {
 
 	@Autowired
-	private TipoDocumentoRepository tipoDocumento;
+	private ProductoRepository productoRepository;
 
 	@Test
 	public void testFindAll() {
-		Iterable<TipoDocumento> findAll = tipoDocumento.findAll();
+		Iterable<Producto> findAll = productoRepository.findAll();
 		assertNotNull(findAll);
+	}
+	
+	@Test
+	public void testFindByCategoria() {
+		Iterable<Producto> findByCategoria = productoRepository.findByCategoria(1);
+		assertNotNull(findByCategoria);
 	}
 }

@@ -12,6 +12,7 @@ public class Producto {
 	private Long id;
 	private String nombre;
 	private String descripcion;
+	private Integer categoria;
 	private Double precio;
 	
 	public Long getId() {
@@ -31,6 +32,12 @@ public class Producto {
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	public Integer getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Integer categoria) {
+		this.categoria = categoria;
 	}
 	public Double getPrecio() {
 		return precio;
